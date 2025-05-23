@@ -1,0 +1,32 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: postgres-db
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: seu_usuario
+      POSTGRES_PASSWORD: sua_senha
+      POSTGRES_DB: seu_banco
+    volumes:
+      - ./docker/postgres/init:/docker-entrypoint-initdb.d
+    networks:
+      - backend
+
+  app:
+    build: .
+    container_name: node-app
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/usr/src/app
+    depends_on:
+      - postgres
+    networks:
+      - backend
+
+networks:
+  backend:
