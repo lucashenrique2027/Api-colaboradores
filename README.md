@@ -12,6 +12,8 @@ api-colaboradores/
 ├── package.json
 ├── server.js
 └── README.md
+
+
 # API REST - Colaboradores
 
 API RESTful desenvolvida em Node.js com Express e Sequelize, conectada ao PostgreSQL.  
@@ -36,7 +38,5 @@ Esta API permite realizar operações de **listar**, **buscar por ID** e **inser
 ## 🐳 Rodando com Docker
 
 1. Clone o repositório:
-
-```bash
-git clone <URL_DO_SEU_REPOSITORIO>
+git clone [URL_DO_SEU_REPOSITORIO] (https://github.com/lucashenrique2027/Api-colaboradores.git)
 cd api-colaboradores
